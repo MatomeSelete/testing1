@@ -1,0 +1,83 @@
+<!-- Upload Resume -->
+<div>
+  <label for="resume">Upload Resume:</label>
+  <input type="file" id="resume" style="display: none" (change)="onFileSelected($event)">
+  <button type="button" (click)="uploadResume()">Extract Resume</button>
+</div>
+
+<!-- Personal Information -->
+<h2>Personal Information</h2>
+<div>
+  <label>First Name:</label>
+  <input type="text" [(ngModel)]="resumeData.personalInfo.firstName" placeholder="First Name">
+</div>
+<div>
+  <label>Last Name:</label>
+  <input type="text" [(ngModel)]="resumeData.personalInfo.lastName" placeholder="Last Name">
+</div>
+<div>
+  <label>Email:</label>
+  <input type="email" [(ngModel)]="resumeData.personalInfo.email" placeholder="Email">
+</div>
+<div>
+  <label>Contact Number:</label>
+  <input type="tel" [(ngModel)]="resumeData.personalInfo.contactNumber" placeholder="Contact Number">
+</div>
+<div>
+  <label>ID Number / Passport Number:</label>
+  <input type="text" [(ngModel)]="resumeData.personalInfo.idNumber" placeholder="ID Number / Passport Number">
+</div>
+<div>
+  <label>Rate per hr:</label>
+  <input type="text" [(ngModel)]="resumeData.personalInfo.ratePerHour" placeholder="Rate per hr">
+</div>
+
+<!-- Skills -->
+<h2>Skills</h2>
+<ul>
+  <li *ngFor="let skill of resumeData.skills">
+    <div>{{ skill.description }}</div>
+    <div>{{ skill.level }}</div>
+  </li>
+</ul>
+
+<!-- Work History -->
+<h2>Work History</h2>
+<ul>
+   <li > <!--*ngFor="let work of resumeData.workHistory" -->
+     <div></div>  <!--  {{ work.role }} -->
+    <div>{{ work.company }}</div>
+    <div>{{ work.startDate }}</div>
+    <div>{{ work.endDate }}</div>
+  </li>
+</ul>
+
+<!-- Education -->
+<h2>Education</h2>
+<ul>
+  <li *ngFor="let education of resumeData.education">
+    <div>{{ education.name }}</div>
+    <div>{{ education.institution }}</div>
+    <div>{{ education.endDate }}</div>
+  </li>
+</ul>
+
+<!-- Certifications -->
+<h2>Certifications</h2>
+<ul>
+  <li *ngFor="let certification of resumeData.certifications">
+    <div>{{ certification.name }}</div>
+    <div>{{ certification.institution }}</div>
+    <div>{{ certification.attained }}</div>
+  </li>
+</ul>
+
+<!-- References -->
+<h2>References</h2>
+<ul>
+  <li *ngFor="let reference of resumeData.references">
+    <div>{{ reference.name }}</div>
+    <div>{{ reference.email }}</div>
+    <div>{{ reference.contactNumber }}</div>
+  </li>
+</ul>
